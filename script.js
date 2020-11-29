@@ -1,5 +1,5 @@
 
-let url = "https://api.vschool.io/michaelmooney/todo/"
+let url = "https://api.vschool.io/michaelmooney/todo/";
 
 // Get All
 function getData(){
@@ -52,7 +52,7 @@ function addEditEvent(button){
 function updateTodo(id, title, description){
     const getURL = url + id;
     axios.put(getURL, {title: title, description: description})
-    .then(setTimeout(() => {  getData(); }, 200)) //is there another way to do this?
+    .then(setTimeout(() => {  getData(); }, 200)) 
     .catch(error => console.log(error))
 }
 
@@ -61,7 +61,7 @@ function addCheckEvent(checkbox){
         let complete = this.checked ? true : false;
         const getURL = url + checkbox.parentNode.childNodes[3].innerHTML;
         axios.put(getURL, {completed: complete})
-        .then(setTimeout(() => {  getData(); }, 200)) //is there another way to do this?
+        .then(setTimeout(() => {  getData(); }, 200)) 
         .catch(error => console.log(error))
     });
 }
@@ -107,4 +107,4 @@ document.querySelector("form").onsubmit = (e) => {
 };
 
 //important
-getData()
+getData();
